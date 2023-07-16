@@ -30,7 +30,12 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
 
-        axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}products`)
+        //original code
+        // axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}products`)
+            
+        //for cyclic deployment    
+        axios.get(`/products`)
+                     
             .then(response => {
                 setProducts(response.data);
             })

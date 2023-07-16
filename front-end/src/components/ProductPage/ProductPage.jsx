@@ -10,7 +10,13 @@ const ProductPage = () => {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}products/product/${productId}`)
+
+        //original code
+        // axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}products/product/${productId}`)
+        
+        //for cyclic deployment
+        axios.get(`/products/product/${productId}`)   
+            
         .then(response => {
         setProduct(response.data);
     })

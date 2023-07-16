@@ -13,8 +13,14 @@ const CategoryPage = () => {
     const [searchParams] = useSearchParams();
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}categories/${searchParams.toString()}`)
-            .then(res => {
+
+        //original code
+        // axios.get(`${import.meta.env.VITE_REACT_APP_DB_URL}categories/${searchParams.toString()}`)
+
+        //for cyclic deployment
+        axios.get(`/categories/${searchParams.toString()}`)
+   
+             .then(res => {
                 setProductInfo(res.data.products);
                 setCategories(formatCategories(res.data.categories));
             })
