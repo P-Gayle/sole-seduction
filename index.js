@@ -11,6 +11,7 @@ import { categories } from './src/routes/categories.route.js';
 import { products } from './src/routes/singleProduct.route.js';
 
 const app = express();
+const PORT = process.env.PORT || 3000
 environmentConfig;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,7 +50,7 @@ app.get("*", function (_, res) {
 });
 
 dbConnect().then(() => {
-  app.listen(process.env.PORT, () => {
+  app.listen(PORT, () => {
     console.log(`Connected to backend on port ${process.env.PORT}`);
   });
 });
