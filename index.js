@@ -51,6 +51,6 @@ app.get("*", function (_, res) {
 
 dbConnect().then(() => {
   app.listen(PORT, () => {
-    console.log(`Connected to backend on port ${process.env.PORT}`);
+    console.log(`Connected to backend on port ${PORT}`);
   });
 });
