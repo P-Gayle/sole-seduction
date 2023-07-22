@@ -1,11 +1,10 @@
-//original index.js - not used for cyclic deployment
-
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dbConnect from './src/dbConnect.js';
 import environmentConfig from './src/environmentConfig.js';
 import express from 'express';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 import { categories } from './src/routes/categories.route.js';
@@ -13,7 +12,8 @@ import { products } from './src/routes/singleProduct.route.js';
 
 const app = express();
 environmentConfig;
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use((cors()));
 app.use(bodyParser.json());
@@ -37,6 +37,16 @@ app.use((req, res, next) => {
 app.use("/categories", categories);
 app.use("/products", products);
 
+//For Cyclic deployment - to serve the frontend
+app.use(express.static(path.join(__dirname, "./front-end/dist")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./front-end/dist/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 
 app.listen(process.env.PORT, () => {
     console.log(`Connected to backend on port ${process.env.PORT}`);
