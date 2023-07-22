@@ -11,7 +11,7 @@ import { categories } from './src/routes/categories.route.js';
 import { products } from './src/routes/singleProduct.route.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8800
 environmentConfig;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
