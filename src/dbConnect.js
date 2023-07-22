@@ -5,11 +5,11 @@ environmentConfig;
 
 const dbConnect = async () => {
     try {
-        const conn = await mongoose.connect(process.env.DB_URI
-            // {
-            //     useNewUrlParser: true,
-            //     useUnifiedTopology: true
-            // }
+        const conn = await mongoose.connect(process.env.DB_URI,
+            {
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            }
         
         );
     
