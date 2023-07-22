@@ -48,6 +48,8 @@ app.get("*", function (_, res) {
   );
 });
 
-app.listen(process.env.PORT, () => {
+if (dbConnect) {
+  app.listen(process.env.PORT, () => {
     console.log(`Connected to backend on port ${process.env.PORT}`);
-});
+  });
+}
