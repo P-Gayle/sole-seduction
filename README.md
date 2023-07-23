@@ -49,6 +49,23 @@ The final part of our planning stage was to add the user stories to the backlog 
 
 ![scrum board ](front-end/src/assets/readMe-images/scrumboard.png)
 
+## PAGES
+
+### Home
+![home page screenshot ](front-end/src/assets/readMe-images/home.png)
+
+### All Products
+![all products/categories ](front-end/src/assets/readMe-images/AllProducts.png)
+
+### Filter Modal
+![Filter modal ](front-end/src/assets/readMe-images/filter.png)
+
+### Product Page
+![product page ](front-end/src/assets/readMe-images/product.png)
+
+### Cart
+![cart ](front-end/src/assets/readMe-images/cart.png)
+
 ## CONTRIBUTORS
 We would like to acknowledge and highlight the coding contributions made by each member of our group:
 ### Dunni:
